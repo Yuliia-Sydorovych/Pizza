@@ -4,9 +4,219 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <title>Pizza</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
+    <div class="header">
+        <img src="img/pizza_main2.png" class="logo_img">
+     
+        <img src="img/logo3.png" id="logo">
+
+        <div class="black">
+            <div class="back_opacity"></div>
+           
+            <div id="logo_menu">
+                <a href="#">PIZZA</a>
+                <a href="#">BURGERS</a>
+                <a href="#">DELIVERY</a>
+                <a href="#">RESTAURANTS</a>
+                <a href="#">NEWS</a>
+                <a href="index3.html" id="basket">
+                    <img src="img/basket3.png" height="25px">
+                </a>
+            </div>
+        </div>
+        
+    </div>
+   <div class="center">
+        <div class="left">
+                <div>
+                    <p class="title">
+                        Price
+                    </p>
+                    <span id="min">$10</span>
+                    <input type="range" name="price" min="10" max="15" step="1" value="15" oninput="change_price()" id="range">
+                    <span id="max">$15</span>
+                </div>
+                <div>
+                    <p class="title paddingBottom">
+                        Ingredients
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Meat" value="Meat">
+                        <label for="Meat">Meat</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Pepperoni" value="Pepperoni">
+                        <label for="Pepperoni">Pepperoni</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Bacon" value="Bacon">
+                        <label for="Bacon">Bacon</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Mushrooms" value="Mushrooms">
+                        <label for="Mushrooms">Mushrooms</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Olives" value="Olives">
+                        <label for="Olives">Olives</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Pineapples" value="Pineapples">
+                        <label for="Pineapples">Pineapples</label>
+                    </p>
+                </div>
+                <div>
+                    <p class="title paddingBottom">
+                        Sause
+                    </p>
+                    <p>
+                        <input type="radio" name="sause" value="red">
+                        <label for="red">Red</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="sause" value="white">
+                        <label for="white">White</label>
+                    </p>
+                </div>
+                <button id="apply">
+                        Apply
+                </button>
+        </div>
+        <div class="right">
+            <div class="left_pizza red_sause eleven">
+                <img src="img/pizza1.png">
+                <p class="name">Pepperoni</p>
+                <p class="description">
+                    Pepperoni and soft cheese
+                </p>
+                <p class="price">
+                    $11
+                </p>
+                <button>Add to cart</button>
+            </div>
+            <div class="center_pizza red_sause ten">
+                <img src="img/pizza2.png">
+                <p class="name">Margherita</p>
+                <p class="description">
+                    Basil, fresh mozzarella and tomatoes
+                </p>
+                <p class="price">
+                    $10
+                </p>
+                <button>Add to cart</button>
+            </div>
+            <div class="right_pizza white_sause twelve">
+                <img src="img/pizza9.png">
+                <p class="name">Cheese</p>
+                <p class="description">
+                Mozzarella, cheader and parmigiano
+                </p>
+                <p class="price">
+                    $12
+                </p>
+                <button>Add to cart</button>
+            </div>
+
+            <div class="left_pizza red_sause eleven">
+                <img src="img/pizza4.png" height="240px" class="resize">
+                <p class="name">Works</p>
+                <p class="description">
+                    Onions, olives, mushrooms, bacon and pepperoni
+                </p>
+                <p class="price">
+                    $11
+                </p>
+                <button>Add to cart</button>
+            </div>
+            <div class="center_pizza red_sause thirteen">
+                <img src="img/pizza5.png">
+                <p class="name">Supreme</p>
+                <p class="description">
+                    Sausage, pepperoni, olives and red peper
+                </p>
+                <p class="price">
+                    $13
+                </p>
+                <button>Add to cart</button>
+            </div>
+            <div class="right_pizza white_sause fifteen">
+                <img src="img/pizza6.png">
+                <p class="name">Meat</p>
+                <p class="description">
+                    Beef and pepperoni
+                </p>
+                <p class="price">
+                    $15
+                </p>
+                <button>Add to cart</button>
+            </div>
+
+            <div class="left_pizza red_sause twelve">
+                <img src="img/pizza7.png">
+                <p class="name">Neapolitan</p>
+                <p class="description">
+                Tomatoes, pineapples and cheese
+                </p>
+                <p class="price">
+                    $12
+                </p>
+                <button>Add to cart</button>
+            </div>
+            <div class="center_pizza white_sause fourteen">
+                <img src="img/pizza3.png">
+                <p class="name">BBQ</p>
+                <p class="description">
+                    Chicken slathered, sweet flavor and tomatoes
+                </p>
+                <p class="price">
+                    $14
+                </p>
+                <button>Add to cart</button>
+                
+            </div>
+            <div class="right_pizza red_sause ten">
+                <img src="img/pizza10.png">
+                <p class="name">Make your own</p>
+                <p class="description">
+                    You can add any ingredient
+                </p>
+                <p class="price">
+                    $10
+                </p>
+                
+                <a href="index2.html">
+                    <button id="create">Make pizza </button>
+                </a>
+            
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <span>
+            Keep in contact with us
+        </span>
+        
+        <a href="#">
+            <img src="img/instagram.png">
+        </a>
+        <a href="#">
+            <img src="img/facebook.png">
+        </a>
+        <a href="#">
+            <img src="img/viber.png">
+        </a>
+        <a href="#">
+            <img src="img/twitter.png">
+        </a>
+       
+    </div>
     
 </body>
 </html>
