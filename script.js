@@ -1,24 +1,42 @@
 var postTemplate;
+var myObj;
+var myArray = new Array();
 
 $(document).ready(function()
 {
-    postTemplate = $('#order-template').html();
-    console.log(postTemplate);
-
-    $('#add_component').click(function(){
-       
-        var component = {
-            name: $('#selection').val()   
-        };
-
-        $('#components').append(Mustache.render(postTemplate, component));
-
-        console.log(component);
-    });
+    
 });
 
+function Add(obj, obj2)
+    {
+        myObj = {name:obj, price:obj2};
+        myArray.push(myObj);
+        console.log(myArray);
+        postTemplate = $('#order-template3').html();
+        console.log(postTemplate);
 
+        var component = obj;
+        
+        $('#orders').append(Mustache.render(postTemplate, component));
+    }
 //$components.delegate('.remove','click', function (obj) {});
+
+
+/*
+$(document).ready(function()
+{
+    console.log(myArray[0]);
+    postTemplate2 = $('#order-template').html();
+    console.log(postTemplate2);
+
+    var component = {
+        name: $(myArray[0]).val()   
+    };
+    
+    $('#orders').append(Mustache.render(postTemplate2, component));
+          
+});
+*/
 
 function remove(obj)
 {
@@ -54,7 +72,6 @@ $(document).ready(function()
     $('input[name="price"]').click(function ()
     {
        
-
     });
 });
 

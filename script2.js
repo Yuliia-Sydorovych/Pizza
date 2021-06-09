@@ -1,4 +1,5 @@
 var postTemplate;
+var count = 0;
 
 $(document).ready(function()
 {
@@ -7,20 +8,33 @@ $(document).ready(function()
 
     $('#add_component').click(function(){
        
+        count++;
         var component = {
             name: $('#selection').val()   
         };
+        
+        if(count <= 7)
+        {
+            $('#components').append(Mustache.render(postTemplate, component));
+        }
 
-        $('#components').append(Mustache.render(postTemplate, component));
+        if(count >= 7)
+        {
+            $('#add_component').prop('disabled', true);
+        }
 
-        console.log(component);
+        console.log(count);
     });
 });
 
 
-//$components.delegate('.remove','click', function (obj) {});
-
 function remove(obj)
 {
+    count--;
+    if(count <= 7)
+        {
+            $('#add_component').prop('disabled', false);
+        }
+    console.log(count);
     obj.closest('li').remove();
 }

@@ -1,3 +1,7 @@
+*
+{
+  font-family: 'Original Surfer', cursive;
+}
 button {
     background-color: #b5c6d0;
     /* Black */
@@ -12,7 +16,8 @@ a
   text-decoration: none;
   color: black;
 }
-  button:hover, button active, button focus {
+  button:hover, button active, button focus
+  {
     border: 1px solid #000;
   }
   
@@ -22,9 +27,12 @@ a
   
   .remove {
     padding: 2px 5px;
+    background-color: white;
+    color: red;
   }
   
-  input[type="text"] {
+  input[type="text"]
+  {
     border: 1px solid #cccccc;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -34,11 +42,10 @@ a
     outline: none;
   }
   
-  li {
-    background: #d8e1e7;
-    background: -webkit-gradient(left top, right top, color-stop(0%, #d8e1e7), color-stop(45%, rgba(216, 225, 231, 0)), color-stop(100%, rgba(216, 225, 231, 0)));
-    background: -webkit-gradient(linear, left top, right top, from(#d8e1e7), color-stop(45%, rgba(216, 225, 231, 0)), to(rgba(216, 225, 231, 0)));
-    background: linear-gradient(to right, #d8e1e7 0%, rgba(216, 225, 231, 0) 45%, rgba(216, 225, 231, 0) 100%);
+  li
+  {
+    color: white;
+    background: linear-gradient(to right, rgb(224, 101, 18) 0%, rgba(216, 225, 231, 0) 45%, rgba(216, 225, 231, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e1e7', endColorstr='#d8e1e7', GradientType=1 );
   }
 ul li
@@ -82,4 +89,37 @@ div.buttons
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+div.main
+{
+  text-align: center;
+}
+ul#components
+{
+  text-align: left;
+}
+p.ownChoose
+{
+  font-size: 1.3em;
+  font-weight: bold;
+}
+select#selection
+{
+  height: 40px;
+  width: 150px;
+  border: 1px solid rgb(224, 101, 18);
+}
+
+button#add_component
+{
+  background-color: rgb(224, 101, 18);
+  color: white;
+}
+div.buttons button
+{
+  background-color: rgb(117, 54, 12);
+}
+div.buttons button a
+{
+  color: white;
 }

@@ -11,7 +11,20 @@
 </head>
 <body>
     <div class="main">
-        <p>Власний вибір</p>
+        <p class="ownChoose">Own choice</p>
+        
+        <select id="selection">
+            <option>Bree</option>
+            <option>Mozzarella</option>
+            <option>Cheddar</option>
+            <option>Parmesan</option>
+            <option>Sausage</option>
+            <option>Prosciutto</option>
+            <option>Hamon</option>
+            <option>Meat</option>
+        </select>
+        
+        <button id="add_component">+</button>
         
         <ul id="components">
             <script type="text/template" id="order-template">
@@ -21,25 +34,18 @@
                 </li>
             </script>
         </ul>
-
-        <select id="selection">
-            <option>Брі</option>
-            <option>Моцарела</option>
-            <option>Чеддер</option>
-            <option>Пармезан</option>
-            <option>Блю</option>
-        </select>
-
-        <button id="add_component">+</button>
+        
 
         <div class="buttons">
             <button class="back">
                 <a href="index.html">
-                    Go back to the prevoius page
+                    Prevoius page
                 </a>   
             </button>
             <button class="cart">
-                Add to cart
+                <a href="index3.html">
+                    Cart
+                </a> 
             </button>
         </div>
         
