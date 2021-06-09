@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <script src="https://raw.githubusercontent.com/janl/mustache.js/master/mustache.min.js" type="application/javascript"></script>
     <title>Pizza</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
@@ -26,9 +27,9 @@
                 <a href="#">DELIVERY</a>
                 <a href="#">RESTAURANTS</a>
                 <a href="#">NEWS</a>
-                <a href="index3.html" id="basket">
+                <button id="basket" onclick="Cart()">
                     <img src="img/basket3.png" height="25px">
-                </a>
+                </button>
             </div>
         </div>
         
@@ -48,27 +49,27 @@
                         Ingredients
                     </p>
                     <p>
-                        <input type="checkbox" name="Meat" value="Meat">
+                        <input type="checkbox" id="Meat" value="Meat">
                         <label for="Meat">Meat</label>
                     </p>
                     <p>
-                        <input type="checkbox" name="Pepperoni" value="Pepperoni">
+                        <input type="checkbox" id="Pepperoni" value="Pepperoni">
                         <label for="Pepperoni">Pepperoni</label>
                     </p>
                     <p>
-                        <input type="checkbox" name="Bacon" value="Bacon">
+                        <input type="checkbox" id="Bacon" value="Bacon">
                         <label for="Bacon">Bacon</label>
                     </p>
                     <p>
-                        <input type="checkbox" name="Mushrooms" value="Mushrooms">
-                        <label for="Mushrooms">Mushrooms</label>
-                    </p>
-                    <p>
-                        <input type="checkbox" name="Olives" value="Olives">
+                        <input type="checkbox" id="Olives" value="Olives">
                         <label for="Olives">Olives</label>
                     </p>
                     <p>
-                        <input type="checkbox" name="Pineapples" value="Pineapples">
+                        <input type="checkbox" id="Mozzarella" value="Mozzarella">
+                        <label for="Mozzarella">Mozzarella</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Pineapples" value="Pineapples">
                         <label for="Pineapples">Pineapples</label>
                     </p>
                 </div>
@@ -85,12 +86,10 @@
                         <label for="white">White</label>
                     </p>
                 </div>
-                <button id="apply">
-                        Apply
-                </button>
+            
         </div>
         <div class="right">
-            <div class="left_pizza red_sause eleven">
+            <div class="left_pizza red_sause eleven Pepperoni">
                 <img src="img/pizza1.png">
                 <p class="name">Pepperoni</p>
                 <p class="description">
@@ -99,11 +98,11 @@
                 <p class="price">
                     $11
                 </p>
-                <a href="index3.html">
-                    <button class="addPizza" onclick="Add('Pepperoni', '11')">Add to cart</button>
+                <a>
+                    <button class="addPizza" onclick="Add('Pepperoni', 11)">Add to cart</button>
                 </a>
             </div>
-            <div class="center_pizza red_sause ten">
+            <div class="center_pizza red_sause ten Mozzarella">
                 <img src="img/pizza2.png">
                 <p class="name">Margherita</p>
                 <p class="description">
@@ -112,13 +111,13 @@
                 <p class="price">
                     $10
                 </p>
-                <a href="index3.html">
-                    <button class="addPizza" onclick="Add('Margherita', '10')">Add to cart</button>
+                <a>
+                    <button class="addPizza" onclick="Add('Margherita', 10)">Add to cart</button>
                 </a>
                 
                 
             </div>
-            <div class="right_pizza white_sause twelve">
+            <div class="right_pizza white_sause twelve Mozzarella">
                 <img src="img/pizza9.png">
                 <p class="name">Cheese</p>
                 <p class="description">
@@ -127,12 +126,12 @@
                 <p class="price">
                     $12
                 </p>
-                <a href="index3.html">
-                    <button class="addPizza" onclick="Add('Cheese', '12')">Add to cart</button>
+                <a>
+                    <button class="addPizza" onclick="Add('Cheese', 12)">Add to cart</button>
                 </a>
             </div>
 
-            <div class="left_pizza red_sause eleven">
+            <div class="left_pizza red_sause eleven Olives">
                 <img src="img/pizza4.png" height="240px" class="resize">
                 <p class="name">Works</p>
                 <p class="description">
@@ -141,38 +140,38 @@
                 <p class="price">
                     $11
                 </p>
-                <a href="index3.html">
-                <button class="addPizza" onclick="Add('Works', '11')">Add to cart</button>
+                <a>
+                <button class="addPizza" onclick="Add('Works', 11)">Add to cart</button>
                 </a>
             </div>
-            <div class="center_pizza red_sause thirteen">
+            <div class="center_pizza red_sause thirteen Olives">
                 <img src="img/pizza5.png">
                 <p class="name">Supreme</p>
                 <p class="description">
-                    Sausage, pepperoni, olives and red peper
+                    Sausage, olives and red peper
                 </p>
                 <p class="price">
                     $13
                 </p>
-                <a href="index3.html">
-                <button class="addPizza" onclick="Add('Supreme', '13')">Add to cart</button>
+                <a>
+                <button class="addPizza" onclick="Add('Supreme', 13)">Add to cart</button>
                 </a>
             </div>
-            <div class="right_pizza white_sause fifteen">
+            <div class="right_pizza white_sause fifteen Meat">
                 <img src="img/pizza6.png">
                 <p class="name">Meat</p>
                 <p class="description">
-                    Beef and pepperoni
+                    Beef and meat
                 </p>
                 <p class="price">
                     $15
                 </p>
-                <a href="index3.html">
-                <button class="addPizza" onclick="Add('Meat', '15')">Add to cart</button>
+                <a>
+                <button class="addPizza" onclick="Add('Meat', 15)">Add to cart</button>
                 </a>
             </div>
 
-            <div class="left_pizza red_sause twelve">
+            <div class="left_pizza red_sause twelve Pineapples">
                 <img src="img/pizza7.png">
                 <p class="name">Neapolitan</p>
                 <p class="description">
@@ -181,21 +180,21 @@
                 <p class="price">
                     $12
                 </p>
-                <a href="index3.html">
-                <button class="addPizza" onclick="Add('Neapolitan', '12')">Add to cart</button>
+                <a>
+                <button class="addPizza" onclick="Add('Neapolitan', 12)">Add to cart</button>
                 </a>
             </div>
-            <div class="center_pizza white_sause fourteen">
+            <div class="center_pizza white_sause fourteen Bacon">
                 <img src="img/pizza3.png">
                 <p class="name">BBQ</p>
                 <p class="description">
-                    Chicken slathered, sweet flavor and tomatoes
+                    Chicken slathered, sweet flavor and bacon
                 </p>
                 <p class="price">
                     $14
                 </p>
-                <a href="index3.html">
-                <button class="addPizza" onclick="Add('BBQ', '14')">Add to cart</button>
+                <a>
+                <button class="addPizza" onclick="Add('BBQ', 14)">Add to cart</button>
                 </a>
             </div>
             <div class="right_pizza red_sause ten">
@@ -215,12 +214,13 @@
             </div>
         </div>
     </div>
+
     <div class="footer">
-        <div class="info">
-            <span>
+        
+        <span>
             Keep in contact with us
         </span>
-        
+
         <a href="#">
             <img src="img/instagram.png">
         </a>
@@ -233,9 +233,28 @@
         <a href="#">
             <img src="img/twitter.png">
         </a>
-        </div>
-       
+        
     </div>
-    
+   
+    <div class="cart">
+        <button class="close">
+            X
+        </button>
+        <div class="yourOrder">
+            <p>Your order</p>
+        </div>
+        <ul id="orders">
+            <script type="text/template" id="order-template">
+                <li>
+                    <span class ="noedit name">{{name}}</span>
+                    <span class ="noedit price"> - {{price}}$</span>
+                    <button onclick=remove(this) class='remove'>x</button>
+                </li>
+                
+            </script>
+        </ul>
+        
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js" ></script>
 </body>
 </html>

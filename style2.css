@@ -118,6 +118,7 @@ button#add_component
 div.buttons button
 {
   background-color: rgb(117, 54, 12);
+  color: white;
 }
 div.buttons button a
 {

@@ -1,45 +1,76 @@
 var postTemplate;
 var myObj;
 var myArray = new Array();
+var count = 1;
+
+var number = 0;
 
 $(document).ready(function()
 {
-    
+    $('.close').click(function()
+    {
+        count++;
+        $('body').find(".center").css('display', 'block');
+        $('body').find(".footer").css('display', 'block');
+        $('body').find(".cart").css('display', 'none');
+
+    });
 });
+
+function Cart()
+{
+    count++;
+    
+        if(count%2==0)
+        {
+            $('body').find(".center").css('display', 'none');
+            $('body').find(".footer").css('display', 'none');
+            $('body').find(".cart").css('display', 'block');
+        }
+        else
+        {
+
+        }
+        if(count%2!=0)
+        {
+            $('body').find(".center").css('display', 'block');
+            $('body').find(".footer").css('display', 'block');
+            $('body').find(".cart").css('display', 'none');
+        }
+        
+}
 
 function Add(obj, obj2)
-    {
-        myObj = {name:obj, price:obj2};
-        myArray.push(myObj);
-        console.log(myArray);
-        postTemplate = $('#order-template3').html();
-        console.log(postTemplate);
-
-        var component = obj;
-        
-        $('#orders').append(Mustache.render(postTemplate, component));
-    }
-//$components.delegate('.remove','click', function (obj) {});
-
-
-/*
-$(document).ready(function()
 {
-    console.log(myArray[0]);
-    postTemplate2 = $('#order-template').html();
-    console.log(postTemplate2);
-
-    var component = {
-        name: $(myArray[0]).val()   
-    };
     
-    $('#orders').append(Mustache.render(postTemplate2, component));
-          
-});
-*/
+    postTemplate = $('#order-template').html();
+    
+    var component = {
+        name: obj,
+        price: obj2
+    };
+    if(component)
+    {
+        number++;
+
+        if(number <= 7)
+        {
+            $('#orders').append(Mustache.render(postTemplate, component));
+        }
+        else
+        {
+            number=7;
+        }
+    }
+    console.log(number);
+}
+
 
 function remove(obj)
 {
+    number--;
+    console.log(number);
+    
     obj.closest('li').remove();
 }
 
@@ -54,7 +85,6 @@ $(document).ready(function()
         {
             $('.right').find(".red_sause").css('display', 'block');
             $('.right').find(".red_sause").css('float', 'left');
-            $('.right').find(".red_sause").css('width', '335px');
             $('.right').find(".white_sause").css('display', 'none');
         }
         else
@@ -67,14 +97,155 @@ $(document).ready(function()
     });
 });
 
-$(document).ready(function()
+$(function()
 {
-    $('input[name="price"]').click(function ()
+    $(document).on('click','#Meat',function()
     {
-       
+       if($(this).prop('checked'))
+       {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'none');
+            $('.right').find(".Bacon").css('display', 'none');
+            $('.right').find(".Olives").css('display', 'none');
+            $('.right').find(".Pineapples").css('display', 'none');
+            $('.right').find(".Mozzarella").css('display', 'none');
+       }
+       else
+        {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        }
     });
-});
-
+})
+$(function()
+{
+    $(document).on('click','#Pepperoni',function()
+    {
+       if($(this).prop('checked'))
+       {
+            $('.right').find(".Meat").css('display', 'none');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'none');
+            $('.right').find(".Olives").css('display', 'none');
+            $('.right').find(".Pineapples").css('display', 'none');
+            $('.right').find(".Mozzarella").css('display', 'none');
+        
+       }
+       else
+        {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        }
+    });
+})
+$(function()
+{
+    $(document).on('click','#Bacon',function()
+    {
+       if($(this).prop('checked'))
+       {
+            $('.right').find(".Meat").css('display', 'none');
+            $('.right').find(".Pepperoni").css('display', 'none');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'none');
+            $('.right').find(".Pineapples").css('display', 'none');
+            $('.right').find(".Mozzarella").css('display', 'none');
+        
+       }
+       else
+        {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        }
+    });
+})
+$(function()
+{
+    $(document).on('click','#Olives',function()
+    {
+       if($(this).prop('checked'))
+       {
+            $('.right').find(".Meat").css('display', 'none');
+            $('.right').find(".Pepperoni").css('display', 'none');
+            $('.right').find(".Bacon").css('display', 'none');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'none');
+            $('.right').find(".Mozzarella").css('display', 'none');
+        
+       }
+       else
+        {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        }
+    });
+})
+$(function()
+{
+    $(document).on('click','#Pineapples',function()
+    {
+       if($(this).prop('checked'))
+       {
+            $('.right').find(".Meat").css('display', 'none');
+            $('.right').find(".Pepperoni").css('display', 'none');
+            $('.right').find(".Bacon").css('display', 'none');
+            $('.right').find(".Olives").css('display', 'none');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'none');
+        
+       }
+       else
+        {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        }
+    });
+})
+$(function()
+{
+    $(document).on('click','#Mozzarella',function()
+    {
+       if($(this).prop('checked'))
+       {
+            $('.right').find(".Meat").css('display', 'none');
+            $('.right').find(".Pepperoni").css('display', 'none');
+            $('.right').find(".Bacon").css('display', 'none');
+            $('.right').find(".Olives").css('display', 'none');
+            $('.right').find(".Pineapples").css('display', 'none');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        
+       }
+       else
+        {
+            $('.right').find(".Meat").css('display', 'block');
+            $('.right').find(".Pepperoni").css('display', 'block');
+            $('.right').find(".Bacon").css('display', 'block');
+            $('.right').find(".Olives").css('display', 'block');
+            $('.right').find(".Pineapples").css('display', 'block');
+            $('.right').find(".Mozzarella").css('display', 'block');
+        }
+    });
+})
 function change_price()
 {
     var range = document.getElementById('range');
